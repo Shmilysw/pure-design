@@ -6,18 +6,27 @@
             <el-breadcrumb-item>订单管理</el-breadcrumb-item>
             <!-- <el-breadcrumb-item>订单列表</el-breadcrumb-item> -->
         </el-breadcrumb>
+        <div style="margin: 10px 0">
+            <el-input style="width: 200px" placeholder="请输入名称" suffix-icon="el-icon-search" v-model="username"></el-input>
+            <!-- <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-message" class="ml-5"
+                v-model="email"></el-input>
+            <el-input style="width: 200px" placeholder="请输入地址" suffix-icon="el-icon-position" class="ml-5"
+                v-model="address"></el-input> -->
+            <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
+            <el-button type="warning" @click="reset">重置</el-button>
+        </div>
         <!-- 卡片视图区域 -->
         <el-card>
-            <el-row>
+            <!-- <el-row>
                 <el-col :span="8">
                     <el-input placeholder="请输入内容">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </el-col>
-            </el-row>
+            </el-row> -->
             <!-- 订单列表数据 -->
             <el-table :data="orderList" border stripe>
-                <el-table-column type="index"></el-table-column>
+                <el-table-column label="ID" type="index"></el-table-column>
                 <el-table-column label="订单编号" prop="order_number"></el-table-column>
                 <el-table-column label="商品名称" prop="order_name"></el-table-column>
                 <el-table-column label="订单价格" prop="order_price"></el-table-column>
@@ -117,6 +126,7 @@ export default {
     },
     methods: {
         getOrderList() {
+            // 获取接入数据
             // const { data: result } = await this.$http.get('orders', {
             //     params: this.queryInfo
             // })
@@ -127,6 +137,7 @@ export default {
             // console.log(result)
             // this.total = result.data.total
             // this.orderList = result.data.goods
+            // 直接模拟数据
             this.total = 10;
             this.orderList = [
                 {
@@ -194,7 +205,34 @@ export default {
             this.progressInfo = this.db
             this.progressVisible = true
             console.log(this.progressInfo)
-        }
+        },
+        load() {
+            // 模拟
+            this.request.get("/user/page", {
+                params: {
+                    pageNum: this.pageNum,
+                    pageSize: this.pageSize,
+                    username: this.username,
+                    email: this.email,
+                    address: this.address,
+                }
+            }).then(res => {
+
+                this.tableData = res.data.records
+                this.total = res.data.total
+
+            })
+
+            this.request.get("/role").then(res => {
+                this.roles = res.data
+            })
+        },
+        reset() {
+            this.username = ""
+            this.email = ""
+            this.address = ""
+            this.load()
+        },
     }
 }
 </script>
