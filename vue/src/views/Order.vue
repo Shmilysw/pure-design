@@ -59,7 +59,7 @@
         </el-card>
 
         <!-- 修改修改地址的对话框 -->
-        <el-dialog title="修改地址" :visible.sync="addressVisible" width="50%" @close="addressDialogClosed">
+        <el-dialog title="修改地址" :visible.sync="addressVisible" width="30%" @close="addressDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="addressForm" :rules="addressFormRules" ref="addressFormRef" label-width="100px">
                 <el-form-item label="省市区/县" prop="address1">

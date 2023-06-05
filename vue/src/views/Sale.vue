@@ -11,13 +11,13 @@ export default {
     mounted() {
         var lineOption = {
             title: {
-                text: 'Stacked Line'
+                text: '折线图'
             },
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                data: ['化学原料', '化学纤维', '化学制品', '橡胶塑料', '石油化工']
             },
             grid: {
                 left: '3%',
@@ -40,35 +40,35 @@ export default {
             },
             series: [
                 {
-                    name: 'Email',
+                    name: '化学原料',
                     type: 'line',
                     stack: 'Total',
                     data: [120, 132, 101, 134, 90, 230, 210],
                     smooth: true
                 },
                 {
-                    name: 'Union Ads',
+                    name: '化学纤维',
                     type: 'line',
                     stack: 'Total',
                     data: [220, 182, 191, 234, 290, 330, 310],
                     smooth: true
                 },
                 {
-                    name: 'Video Ads',
+                    name: '化学制品',
                     type: 'line',
                     stack: 'Total',
                     data: [150, 232, 201, 154, 190, 330, 410],
                     smooth: true
                 },
                 {
-                    name: 'Direct',
+                    name: '橡胶塑料',
                     type: 'line',
                     stack: 'Total',
                     data: [320, 332, 301, 334, 390, 330, 320],
                     smooth: true
                 },
                 {
-                    name: 'Search Engine',
+                    name: '石油化工',
                     type: 'line',
                     stack: 'Total',
                     data: [820, 932, 901, 934, 1290, 1330, 1320],
@@ -79,34 +79,35 @@ export default {
 
         var radarOption = {
             title: {
-                text: 'Basic Radar Chart'
+                text: '雷达图'
             },
             legend: {
-                data: ['Allocated Budget', 'Actual Spending']
+                data: ['预估销量', '实际销量']
             },
             radar: {
                 // shape: 'circle',
                 indicator: [
-                    { name: 'Sales', max: 6500 },
-                    { name: 'Administration', max: 16000 },
-                    { name: 'Information Technology', max: 30000 },
-                    { name: 'Customer Support', max: 38000 },
-                    { name: 'Development', max: 52000 },
-                    { name: 'Marketing', max: 25000 }
+                    { name: '总体销量', max: 100000 },
+                    { name: '化学原料', max: 16000 },
+                    { name: '化学纤维', max: 30000 },
+                    { name: '化学制品', max: 38000 },
+                    { name: '橡胶塑料', max: 52000 },
+                    { name: '石油化工', max: 25000 }
                 ]
             },
             series: [
                 {
                     name: 'Budget vs spending',
                     type: 'radar',
+                    stack: 'Total',
                     data: [
                         {
-                            value: [4200, 3000, 20000, 35000, 50000, 18000],
-                            name: 'Allocated Budget'
+                            value: [94200, 3000, 20000, 35000, 50000, 18000],
+                            name: '预估销量',
                         },
                         {
-                            value: [5000, 14000, 28000, 26000, 42000, 21000],
-                            name: 'Actual Spending'
+                            value: [95000, 14000, 28000, 26000, 42000, 21000],
+                            name: '实际销量'
                         }
                     ]
                 }

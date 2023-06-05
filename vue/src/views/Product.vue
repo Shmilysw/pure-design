@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
 import * as echarts from "echarts";
 
 export default {
@@ -9,21 +9,35 @@ export default {
         }
     },
     mounted() {
+        // 模拟数据
         // Generate data
         let category = [];
-        let dottedBase = +new Date();
+        // let dottedBase = + new Date();
         let lineData = [];
         let barData = [];
-        for (let i = 0; i < 20; i++) {
-            let date = new Date((dottedBase += 3600 * 24 * 1000));
-            category.push(
-                [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-')
-            );
+
+        for (let i = 0; i < 12; i++) {
+            // let date = new Date((dottedBase += 3600 * 24 * 1000));
+            // let month = (i + 1);
             let b = Math.random() * 200;
             let d = Math.random() * 200;
-            barData.push(b);
+            barData.push(b + 50);
             lineData.push(d + b);
         }
+        category.push(
+            [2022, 5].join('-'),
+            [2022, 6].join('-'),
+            [2022, 7].join('-'),
+            [2022, 8].join('-'),
+            [2022, 9].join('-'),
+            [2022, 10].join('-'),
+            [2022, 11].join('-'),
+            [2022, 12].join('-'),
+            [2023, 1].join('-'),
+            [2023, 2].join('-'),
+            [2023, 3].join('-'),
+            [2023, 4].join('-')
+        );
         // option
         var option = {
             backgroundColor: '#0f375f',
@@ -34,7 +48,7 @@ export default {
                 }
             },
             legend: {
-                data: ['line', 'bar'],
+                data: ['预期生产', '实际生产'],
                 textStyle: {
                     color: '#ccc'
                 }
@@ -57,7 +71,7 @@ export default {
             },
             series: [
                 {
-                    name: 'line',
+                    name: '预期生产',
                     type: 'line',
                     smooth: true,
                     showAllSymbol: true,
@@ -66,7 +80,7 @@ export default {
                     data: lineData
                 },
                 {
-                    name: 'bar',
+                    name: '实际生产',
                     type: 'bar',
                     barWidth: 10,
                     itemStyle: {
@@ -78,34 +92,6 @@ export default {
                     },
                     data: barData
                 },
-                {
-                    name: 'line',
-                    type: 'bar',
-                    barGap: '-100%',
-                    barWidth: 10,
-                    itemStyle: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                            { offset: 0, color: 'rgba(20,200,212,0.5)' },
-                            { offset: 0.2, color: 'rgba(20,200,212,0.2)' },
-                            { offset: 1, color: 'rgba(20,200,212,0)' }
-                        ])
-                    },
-                    z: -12,
-                    data: lineData
-                },
-                {
-                    name: 'dotted',
-                    type: 'pictorialBar',
-                    symbol: 'rect',
-                    itemStyle: {
-                        color: '#0f375f'
-                    },
-                    symbolRepeat: true,
-                    symbolSize: [12, 4],
-                    symbolMargin: 1,
-                    z: -10,
-                    data: lineData
-                }
             ]
         };
 
@@ -124,7 +110,7 @@ export default {
 
 <template>
     <div>
-        <el-row :gutter="10" style="margin-bottom: 60px">
+        <el-row :gutter="10" style="margin-bottom: 30px">
             <el-col :span="6">
                 <el-card style="color: #409EFF">
                     <div><i class="el-icon-user-solid" /> 用户总数</div>
@@ -160,7 +146,7 @@ export default {
         </el-row>
         <el-row>
             <el-col :span="12">
-                <div id="main" style="width:1200px;height: 450px"></div>
+                <div id="main" style="width:1200px; height:480px"></div>
             </el-col>
         </el-row>
     </div>
