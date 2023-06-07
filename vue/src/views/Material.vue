@@ -27,7 +27,7 @@ export default {
             },
             cityData,
             progressVisible: false,
-            progressInfo: [],
+            progressInfo: "",
             db
         }
     },
@@ -51,12 +51,26 @@ export default {
             this.total = 10;
             this.orderList = [
                 {
-                    order_name: '化工配件',
-                    order_photo: require('../assets/my_head.png'),
-                    order_price: '1200￥',
-                    pay_status: '1',
-                    is_send: '否',
-                    create_time: '2023-05-30 09:30:00'
+                    material_id: '0',
+                    material_name: '化工配件',
+                    material_photo: require('../assets/my_head.png'),
+                    material_number: '224342',
+                    material_company: 'space-x',
+                    material_person: '马斯克',
+                    material_create_time: '2023-05-30 09:30:00',
+                    material_status: '0',
+                    material_detail: '化工设备。指主要作用部件是静止的或者只有很少运动的机械，如各种容器（槽、罐、釜等）、普通窑、塔器、反应器、换热器、普通干燥器、蒸发器，反应炉、电解槽、结晶设备、传质设备、吸附设备、流态化设备、普通分离设备以及离子交换设备等。化工机械的划分是不严格的，一些流体输送机械（如泵、风机和压缩机等）在化工部门常被称作化工机械，但同时它们又是各种工业生产中的通用机械。近代化工机械的设计和制造，除了依赖于机械工程和材料工程的发展外，还与化学工艺和化学工程的发展紧密相关。化工机械主要研究机械的耐腐蚀等，还有电化学等范围。'
+                },
+                {
+                    material_id: '1',
+                    material_name: '有机化学品',
+                    material_photo: require('../assets/my_head.png'),
+                    material_number: '423532',
+                    material_company: '特斯拉',
+                    material_person: '马斯克',
+                    material_create_time: '2023-05-22 09:30:00',
+                    material_status: '1',
+                    material_detail: '有机化学是研究有机化合物及有机物质的结构、性质、反应的学科，是化学中极重要的一个分支。有机化学研究的对象是以不同形式包含碳原子的物质，又称为碳化合物的化学。有关有机化合物或有机物质结构的研究包括用光谱、核磁共振、红外光谱、紫外光谱、质谱或其他物理或化学方式来确认其组成的元素、组成方式、实验式及化学式。'
                 },
                 // {
                 //     order_name: '无机化工品',
@@ -107,14 +121,16 @@ export default {
         addressDialogClosed() {
             this.$refs.addressFormRef.resetFields()
         },
-        showProgressBox() {
+        showProgressBox(orderList, material_id) {
             // const { data: result } = await this.$http.get('http://localhost:3000')
             // if (result.meta.status !== 200) {
             //   return this.$message.error('获取物流进度失败')
             // }
-            this.progressInfo = this.db
             this.progressVisible = true
-            console.log(this.progressInfo)
+            // console.log(this.progressInfo)
+            // console.log(material_id);
+            this.progressInfo = orderList[material_id].material_detail
+            // console.log(this.progressInfo);
         },
     }
 }
@@ -149,33 +165,36 @@ export default {
             <!-- 订单列表数据 -->
             <el-table :data="orderList" border stripe>
                 <el-table-column label="ID" type="index"></el-table-column>
-                <el-table-column label="材料名称" prop="order_name"></el-table-column>
-                <el-table-column label="材料图片" prop="order_photo">
+                <el-table-column label="材料名称" prop="material_name"></el-table-column>
+                <el-table-column label="材料图片" prop="material_photo">
                     <template slot-scope="scope">
                         <el-popover placement="top-start" title="" trigger="hover">
-                            <img :src="scope.row.order_photo" alt="" style="width: 150px;height: 150px">
-                            <img slot="reference" :src="scope.row.order_photo" style="width: 30px;height: 30px">
+                            <img src="https://s1.hdslb.com/bfs/static/laputa-home/client/assets/load-error.685235d2.png"
+                                alt="" style="width: 150px;height: 150px">
+                            <img :src="scope.row.material_photo" alt="" style="width: 150px;height: 150px">
+                            <img slot="reference" :src="scope.row.material_photo" style="width: 30px;height: 30px">
                         </el-popover>
                     </template>
                 </el-table-column>
-                <el-table-column label="库存数量" prop="order_number"></el-table-column>
-                <el-table-column label="原产商家" prop="order_company"></el-table-column>
-                <el-table-column label="负责人" prop="order_person"></el-table-column>
-                <el-table-column label="下单时间" prop="create_time">
+                <el-table-column label="库存数量" prop="material_number"></el-table-column>
+                <el-table-column label="原产商家" prop="material_company"></el-table-column>
+                <el-table-column label="负责人" prop="material_person"></el-table-column>
+                <el-table-column label="下单时间" prop="material_create_time">
                     <template slot-scope="scope">
-                        {{ scope.row.create_time | dateFormat }}
+                        {{ scope.row.material_create_time | dateFormat }}
                     </template>
                 </el-table-column>
-                <el-table-column label="补货提醒" prop="pay_status">
+                <el-table-column label="补货提醒" prop="material_status">
                     <template slot-scope="scope">
-                        <el-tag type="success" v-if="scope.row.pay_status === '1'"></el-tag>
-                        <el-tag type="danger" v-else>未付款</el-tag>
+                        <el-tag type="success" v-if="scope.row.material_status === '1'">需要补货</el-tag>
+                        <el-tag type="danger" v-else>无需补货</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作">
-                    <template>
+                    <template slot-scope="scope">
                         <el-button icon="el-icon-edit" size="mini" type="primary" @click="showBox"></el-button>
-                        <el-button icon="el-icon-location" size="mini" type="success" @click="showProgressBox"></el-button>
+                        <el-button icon="el-icon-location" size="mini" type="success"
+                            @click="showProgressBox(orderList, scope.row.material_id)"></el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -188,7 +207,7 @@ export default {
             </div>
         </el-card>
         <!-- 修改修改地址的对话框 -->
-        <el-dialog title="修改地址" :visible.sync="addressVisible" width="30%" @close="addressDialogClosed">
+        <el-dialog title="修改信息" :visible.sync="addressVisible" width="30%" @close="addressDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="addressForm" :rules="addressFormRules" ref="addressFormRef" label-width="100px">
                 <el-form-item label="省市区/县" prop="address1">
@@ -206,14 +225,11 @@ export default {
         </el-dialog>
 
         <!-- 展示物流进度的对话框 -->
-        <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
-            <!-- 内容主体区域 时间线 -->
-            <el-timeline>
-                <el-timeline-item v-for="(   activity, index   ) in    progressInfo   " :key="index"
-                    :timestamp="activity.time">
-                    {{ activity.context }}
-                </el-timeline-item>
-            </el-timeline>
+        <el-dialog title="详细信息" :visible.sync="progressVisible" width="30%">
+            <!-- 详情信息 -->
+            <el-card>
+                {{ progressInfo }}
+            </el-card>
         </el-dialog>
     </div>
 </template>

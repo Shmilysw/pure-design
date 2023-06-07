@@ -8,7 +8,7 @@
         <div style="margin: 10px 0">
             <el-upload :action="'http://' + serverIp + ':9090/file/upload'" :show-file-list="false"
                 :on-success="handleFileUploadSuccess" style="display: inline-block">
-                <el-button type="primary" class="ml-5">上传文件 <i class="el-icon-top"></i></el-button>
+                <el-button type="primary">上传文件 <i class="el-icon-top"></i></el-button>
             </el-upload>
             <el-popconfirm class="ml-5" confirm-button-text='确定' cancel-button-text='我再想想' icon="el-icon-info"
                 icon-color="red" title="您确定批量删除这些数据吗？" @confirm="delBatch">
