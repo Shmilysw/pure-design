@@ -169,8 +169,8 @@ export default {
                 <el-table-column label="材料图片" prop="material_photo">
                     <template slot-scope="scope">
                         <el-popover placement="top-start" title="" trigger="hover">
-                            <img src="https://s1.hdslb.com/bfs/static/laputa-home/client/assets/load-error.685235d2.png"
-                                alt="" style="width: 150px;height: 150px">
+                            <!-- <img src="https://s1.hdslb.com/bfs/static/laputa-home/client/assets/load-error.685235d2.png"
+                                alt="" style="width: 150px;height: 150px"> -->
                             <img :src="scope.row.material_photo" alt="" style="width: 150px;height: 150px">
                             <img slot="reference" :src="scope.row.material_photo" style="width: 30px;height: 30px">
                         </el-popover>
