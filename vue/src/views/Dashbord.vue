@@ -1,6 +1,9 @@
 <template>
     <div>
-        <a href="http://127.0.0.1:5500/src/views/show/index.html" style="color: black;">可视化界面跳转
+        <a href="http://127.0.0.1:5500/src/views/show/index.html"
+            style="color: black;display: flex;justify-content: center;font-family: '楷体';font-size: 25px;">可视化界面跳转
+        </a>
+        <a href="http://127.0.0.1:5500/src/views/show/index.html" style="color: black;">
             <img src="../assets/show_img.png" alt="">
         </a>
         <!-- <div class="head clearfix">
