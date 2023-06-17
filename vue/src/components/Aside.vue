@@ -1,9 +1,9 @@
 <template>
     <el-menu :default-openeds="opens" style="min-height: 100%; overflow-x: hidden" background-color="rgb(48, 65, 86)"
         text-color="#fff" active-text-color="#ffd04b" :collapse-transition="false" :collapse="isCollapse" router>
-        <div style="height: 60px; line-height: 60px; text-align: center">
-            <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px;">
-            <b style="color: white; margin-left: 5px" v-show="logoTextShow">化工后台管理系统</b>
+        <div style="height: 60px; line-height: 60px;">
+            <img src="../assets/icon.jpg" alt="" style="width: 30px; height: 30px; position: relative; top: 10px;">
+            <b style="color: white;" v-show="logoTextShow">智能化工制药管理系统</b>
         </div>
         <div v-for="item in menus" :key="item.id">
             <div v-if="item.path">

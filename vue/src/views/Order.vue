@@ -142,7 +142,7 @@ export default {
             this.orderList = [
                 {
                     order_number: '1371473147198471491',
-                    order_name: '化工配件',
+                    order_name: '化学原料',
                     order_price: '1200￥',
                     pay_status: '1',
                     is_send: '否',
@@ -150,7 +150,7 @@ export default {
                 },
                 {
                     order_number: '233414141313131313',
-                    order_name: '无机化工品',
+                    order_name: '化学试剂',
                     order_price: '1500￥',
                     pay_status: '1',
                     is_send: '是',
@@ -158,7 +158,7 @@ export default {
                 },
                 {
                     order_number: '321307941414819408',
-                    order_name: '有机化学品',
+                    order_name: '活性药物',
                     order_price: '2500￥',
                     pay_status: '0',
                     is_send: '否',
@@ -166,7 +166,7 @@ export default {
                 },
                 {
                     order_number: '34354141412414144',
-                    order_name: '橡胶',
+                    order_name: '包装材料',
                     order_price: '3000￥',
                     pay_status: '0',
                     is_send: '否',
@@ -174,8 +174,8 @@ export default {
                 },
                 {
                     order_number: '36848242472492478',
-                    order_name: '涂料',
-                    order_price: '7700￥',
+                    order_name: '溶剂',
+                    order_price: '2700￥',
                     pay_status: '1',
                     is_send: '否',
                     create_time: '2023-01-22 12:20:00'

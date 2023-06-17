@@ -40,7 +40,7 @@ export default {
         );
         // option
         var option = {
-            backgroundColor: '#0f375f',
+            backgroundColor: '#fff',
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -50,14 +50,14 @@ export default {
             legend: {
                 data: ['预期生产', '实际生产'],
                 textStyle: {
-                    color: '#ccc'
+                    color: '#000'
                 }
             },
             xAxis: {
                 data: category,
                 axisLine: {
                     lineStyle: {
-                        color: '#ccc'
+                        color: '#000'
                     }
                 }
             },
@@ -65,7 +65,7 @@ export default {
                 splitLine: { show: false },
                 axisLine: {
                     lineStyle: {
-                        color: '#ccc'
+                        color: '#000'
                     }
                 }
             },
@@ -105,7 +105,6 @@ export default {
         })
     }
 }
-
 </script>
 
 <template>
@@ -113,33 +112,33 @@ export default {
         <el-row :gutter="10" style="margin-bottom: 30px">
             <el-col :span="6">
                 <el-card style="color: #409EFF">
-                    <div><i class="el-icon-user-solid" /> 用户总数</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold">
-                        100
+                    <div><i class="el-icon-user-solid" /> 工人总数</div>
+                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
+                        758
                     </div>
                 </el-card>
             </el-col>
             <el-col :span="6">
                 <el-card style="color: #F56C6C">
                     <div><i class="el-icon-money" /> 销售总量</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold">
-                        ￥ 1000000
+                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
+                        ￥ 25223545
                     </div>
                 </el-card>
             </el-col>
             <el-col :span="6">
                 <el-card style="color: #67C23A">
                     <div><i class="el-icon-bank-card" /> 收益总额</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold">
-                        ￥ 300000
+                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
+                        ￥ 4304324
                     </div>
                 </el-card>
             </el-col>
             <el-col :span="6">
-                <el-card style="color: #E6A23C">
-                    <div><i class="el-icon-s-shop" /> 门店总数</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold">
-                        20
+                <el-card style="color: #000">
+                    <div><i class="el-icon-s-shop" /> 工厂总数</div>
+                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
+                        27
                     </div>
                 </el-card>
             </el-col>

@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="60;url='http://mtw.so/5FRdFE'">
-    <title>某公司大数据监控平台</title>
+    <!-- <meta http-equiv="refresh" content="60;url='http://mtw.so/5FRdFE'"> -->
+    <title>智能化工制药监控平台</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/echarts.min.js"></script>
     <script type="text/javascript" src="js/china.js"></script>
@@ -16,19 +16,7 @@
 
 <body>
     <div class="head clearfix">
-        <h1 class="pulll_left">某公司大数据监控平台</h1>
-        <div class="menu menu2 pulll_left">
-            <ul>
-                <li><a href="">标题样式</a></li>
-                <li><a href="">标题样式</a></li>
-                <li><a href="">标题样式</a></li>
-                <li><a href="">标题样式</a></li>
-                <li><a href="">标题样式</a></li>
-                <li><a href="">标题样式</a></li>
-
-            </ul>
-        </div>
-        <div class="time" id="showTime">2018/6/12 17:00:12</div>
+        <h1 style="margin: auto;">智能化工制药监控平台</h1>
         <script>
             var t = null;
             t = setTimeout(time, 1000);//開始运行
@@ -46,59 +34,59 @@
             }
         </script>
     </div>
+    <div class="time" id="showTime" style="text-align: center; margin-bottom: 10px;">2018/6/12 17:00:12</div>
     <div class="mainbox">
-
         <ul class="clearfix nav1">
             <li style="width: 22%">
                 <div class="box">
-                    <div class="tit">版块标题</div>
+                    <div class="tit">生产计划</div>
                     <div class="boxnav" style="height: 200px;">
                         <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>
-                                    <th>业务类型</th>
-                                    <th>计划完成</th>
-                                    <th>实际完成</th>
+                                    <th>生产种类</th>
+                                    <th>计划生产/批</th>
+                                    <th>实际完成/批</th>
                                     <th>增长率</th>
                                 </tr>
                                 <tr>
-                                    <td>类型1</td>
-                                    <td><span class="text-w">1000万</span></td>
-                                    <td><span class="text-b">900万</span></td>
+                                    <td>抗生素</td>
+                                    <td><span class="text-w">5</span></td>
+                                    <td><span class="text-b">10</span></td>
                                     <td>
-                                        <div class="text-d">↑12%</div>
+                                        <div class="text-d">↑100%</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>类型1</td>
-                                    <td><span class="text-w">1000万</span></td>
-                                    <td><span class="text-b">900万</span></td>
+                                    <td>降压药</td>
+                                    <td><span class="text-w">20</span></td>
+                                    <td><span class="text-b">18</span></td>
                                     <td>
-                                        <div class="text-s">↓12%</div>
+                                        <div class="text-s">↓10%</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>类型1</td>
-                                    <td><span class="text-w">1000万</span></td>
-                                    <td><span class="text-b">900万</span></td>
+                                    <td>抗癌药物</td>
+                                    <td><span class="text-w">36</span></td>
+                                    <td><span class="text-b">34</span></td>
                                     <td>
-                                        <div class="text-d">↑12%</div>
+                                        <div class="text-s">↓5.5%</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>类型1</td>
-                                    <td><span class="text-w">1000万</span></td>
-                                    <td><span class="text-b">900万</span></td>
+                                    <td>抗抑郁药</td>
+                                    <td><span class="text-w">10</span></td>
+                                    <td><span class="text-b">8</span></td>
                                     <td>
-                                        <div class="text-s">↓12%</div>
+                                        <div class="text-s">↓20%</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>类型1</td>
-                                    <td><span class="text-w">1000万</span></td>
-                                    <td><span class="text-b">900万</span></td>
+                                    <td>降血脂药</td>
+                                    <td><span class="text-w">10</span></td>
+                                    <td><span class="text-b">12</span></td>
                                     <td>
-                                        <div class="text-d">↑12%</div>
+                                        <div class="text-d">↑20%</div>
                                     </td>
                                 </tr>
 
@@ -107,25 +95,25 @@
                     </div>
                 </div>
                 <div class="box">
-                    <div class="tit">版块标题</div>
+                    <div class="tit">药品合格率</div>
                     <div class="boxnav" style="height: 250px;">
                         <div class="" style="height: 190px" id="echart1"></div>
                         <div class="leidanav">
                             <ul class="clearfix">
-                                <li><span>文本1</span>
-                                    <p>43</p>
+                                <li><span>抗生素</span>
+                                    <p>99.9</p>
                                 </li>
-                                <li><span>文本2</span>
-                                    <p>100</p>
+                                <li><span>降压药</span>
+                                    <p>100.0</p>
                                 </li>
-                                <li><span>文本3</span>
-                                    <p>28</p>
+                                <li><span>抗癌药物</span>
+                                    <p>98.9</p>
                                 </li>
-                                <li><span>文本4</span>
-                                    <p>3</p>
+                                <li><span>抗抑郁药</span>
+                                    <p>97.7</p>
                                 </li>
-                                <li><span>文本5</span>
-                                    <p>150</p>
+                                <li><span>降血脂药</span>
+                                    <p>100.0</p>
                                 </li>
                             </ul>
                         </div>
@@ -138,49 +126,49 @@
                         <div class="mapnav">
                             <ul>
                                 <li>
-                                    <div><span>数据1</span>
-                                        <p>40%</p>
+                                    <div><span>浙江</span>
+                                        <p>32%</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div><span>数据2</span>
+                                    <div><span>江苏</span>
+                                        <p>22%</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><span>山东</span>
+                                        <p>10%</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><span>河北</span>
                                         <p>12%</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div><span>数据3</span>
-                                        <p>80</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><span>数据4</span>
-                                        <p>124</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><span>数据5</span>
-                                        <p>10%</p>
+                                    <div><span>其他</span>
+                                        <p>24%</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="mapnav2">
                             <div class="box">
-                                <div class="tit">版块标题</div>
+                                <div class="tit">销售模块</div>
                                 <div class="boxnav" style="height: 130px;" id="sysx">
                                 </div>
                                 <div class="leidanav leidanav3" style="margin-bottom: 15px;">
                                     <ul class="clearfix">
-                                        <li><span>业务笔数</span>
+                                        <li><span>订单总数</span>
                                             <p>128</p>
                                         </li>
-                                        <li><span>业务收益</span>
-                                            <p>100</p>
+                                        <li><span>成交订单</span>
+                                            <p>113</p>
                                         </li>
-                                        <li><span>业务笔数</span>
-                                            <p>28</p>
+                                        <li><span>取消订单</span>
+                                            <p>15</p>
                                         </li>
-                                        <li><span>业务收益</span>
+                                        <li><span>回购订单</span>
                                             <p>28</p>
                                         </li>
                                     </ul>
@@ -200,23 +188,23 @@
             <li style="width: 22%">
 
                 <div class="box">
-                    <div class="tit">版块标题</div>
+                    <div class="tit">原料需求/吨</div>
                     <div class="boxnav" id="echart3" style="height: 200px;">
 
                     </div>
                 </div>
                 <div class="box">
-                    <div class="tit">版块标题</div>
+                    <div class="tit">产品热度</div>
                     <div class="boxnav" style="height: 250px;">
                         <div style="height: 200px; float: left; width: 40%; padding: 0 5px;">
-                            <div class="tit02 text-b">热门话题榜</div>
+                            <div class="tit02 text-b">热门榜</div>
                             <div class="huati">
                                 <ul>
-                                    <li>1.数据分析 <span class="text-s">↑2167</span></li>
-                                    <li>2.云存储 <span class="text-s">↑2167</span></li>
-                                    <li>3.视觉分析 <span class="text-d">↓2167</span></li>
-                                    <li>4.海量词库 <span class="text-d">↓2167</span></li>
-                                    <li>5.云词典 <span class="text-d">↓2167</span></li>
+                                    <li>1.抗生素 <span class="text-s">↑167</span></li>
+                                    <li>2.降压药 <span class="text-s">↑237</span></li>
+                                    <li>3.抗癌药物 <span class="text-d">↓27</span></li>
+                                    <li>4.抗抑郁药 <span class="text-s">↑167</span></li>
+                                    <li>5.降血脂药 <span class="text-d">↓27</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -226,11 +214,11 @@
                             <div class="text-b tit02" style="text-align: center;">关键词 — 云</div>
                             <div class="tagcloud">
                                 <!-- bo大小 co颜色 -->
-                                <a class="b01 co01" href="">大数据</a>
-                                <a class="b02 co02" href="">大数据</a>
-                                <a class="b03 co05" href="">大数据</a>
-                                <a class="b04 co02" href="">大数据</a>
-                                <a class="b03 co05" href="">大数据</a>
+                                <a class="b01 co01" href="">抗生素</a>
+                                <a class="b02 co02" href="">降压药</a>
+                                <a class="b03 co05" href="">抗癌药物</a>
+                                <a class="b04 co02" href="">抗抑郁药</a>
+                                <a class="b03 co05" href="">降血脂药</a>
                             </div>
                             <script type="text/javascript">
                                 /*3D标签云*/
@@ -252,7 +240,7 @@
         <div class="box" style="padding: 20px 0;">
             <ul class="clearfix nav2 ">
                 <li style="width:25%">
-                    <div class="tit01">版块标题</div>
+                    <div class="tit01">员工管理</div>
                     <div class="" id="">
                         <div style="float: left; width: 50%; height: 170px" id="fb01"></div>
                         <div style="float: left; width: 50%; height: 170px" id="fb02"></div>
@@ -260,37 +248,37 @@
                     <div class="leidanav leidanav2">
                         <ul class="clearfix">
                             <li><span>总人数</span>
-                                <p>128</p>
+                                <p>758</p>
                             </li>
                             <li><span>男职员</span>
-                                <p>100</p>
+                                <p>523</p>
                             </li>
                             <li><span>女职员</span>
-                                <p>28</p>
+                                <p>235</p>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li style="width:25%">
-                    <div class="tit01">版块标题</div>
+                    <div class="tit01">收益统计/万</div>
                     <div class="ftechart" id="echart4"></div>
                 </li>
                 <li style="width:25%">
-                    <div class="tit01">版块标题</div>
+                    <div class="tit01">业务模块</div>
                     <div class="" style="height:100%;display: flex; align-items: center;">
                         <div style="float: left; width: 50%; height: 100%" class="wancheng">
-                            <div><span>已完成人数</span>
-                                <h3>1835<i>人</i></h3>
+                            <div><span>已完成业务</span>
+                                <h3>1435<i>单</i></h3>
                             </div>
                             <div class="yuan">
-                                <span>19%</span>
+                                <span>96%</span>
                             </div>
                         </div>
                         <div style="float: left; width: 50%; height: 50%" id="myd1"></div>
                     </div>
                 </li>
                 <li style="width:25%">
-                    <div class="tit01">版块标题</div>
+                    <div class="tit01">部门模块</div>
                     <div class="" id="">
                         <div style="float: left; width: 50%; height: 200px" id="fb03"></div>
                         <div style="float: left; width: 50%; height: 200px" id="fb04"></div>

@@ -8,68 +8,68 @@ export default {
             imgUrl: require('../assets/my_head.png'),
             value: new Date(),
             tableData: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-23',
+                name: '客户7',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-22',
+                name: '客户6',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-14',
+                name: '客户5',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-10',
+                name: '客户4',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-08',
+                name: '客户3',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-06',
+                name: '客户2',
+                address: '上海市生物化工科技有限公司'
             }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2023-05-01',
+                name: '客户1',
+                address: '上海市生物化工科技有限公司'
             }],
             countData: [
                 {
-                    name: '今日支付订单',
-                    value: 1200,
+                    name: '成交订单/个',
+                    value: 1793,
                     icon: 'success',
                     color: '#2ec7c9'
                 },
                 {
-                    name: '今日收藏订单',
-                    value: 1200,
+                    name: '订单总数/个',
+                    value: 2323,
                     icon: 'star-on',
                     color: '#ffb980'
                 },
                 {
-                    name: '今日取消订单',
-                    value: 1200,
+                    name: '生产总量/批',
+                    value: 1242,
                     icon: 's-goods',
                     color: '#5ab1ef'
                 },
                 {
-                    name: '今日退款订单',
-                    value: 1200,
+                    name: '销售总额/万元',
+                    value: 2522,
                     icon: 'success',
                     color: '#2ec7c9'
                 },
                 {
-                    name: '本月支付订单',
+                    name: '库存水平',
                     value: 1200,
                     icon: 'star-on',
                     color: '#ffb980'
                 },
                 {
-                    name: '本月退款订单',
-                    value: 1200,
+                    name: '总用户数',
+                    value: 75,
                     icon: 's-goods',
                     color: '#5ab1ef'
                 }
@@ -88,24 +88,24 @@ export default {
                 let myChart = echarts.init(this.$refs.barEcharts)
                 let option = {
                     title: {
-                        text: '销售表'
+                        text: '热门产品销售表'
                     },
                     tooltip: {},
                     legend: {
-                        data: ['今日销量', '昨日销量']
+                        data: ['本月销量/批', '预期销量/批']
                     },
                     xAxis: {
-                        data: ['华为', 'vivo', 'oppo', 'ipone', '小米', '三星']
+                        data: ['抗生素', '降压药', '抗癌药物', '抗抑郁药', '降血脂药', '免疫调节剂']
                     },
                     yAxis: {},
                     series: [
                         {
-                            name: '今日销量',
+                            name: '本月销量/批',
                             type: 'bar',
                             data: [5, 20, 36, 10, 10, 20]
                         },
                         {
-                            name: '昨日销量',
+                            name: '预期销量/批',
                             type: 'bar',
                             data: [10, 18, 34, 8, 12, 21]
                         }
@@ -176,7 +176,7 @@ export default {
                             </div>
                         </div>
                         <div class="login-info">
-                            <p>上次登录时间: 2023/06/07 18:16</p>
+                            <p>上次登录时间: 2023/06/16 12:22</p>
                         </div>
                     </el-card>
                     <!-- 首页表格 -->
@@ -209,8 +209,8 @@ export default {
                         :body-style="{ display: 'flex', padding: 0, }" style="width: 250px ; margin-top: 5px"
                         class="OrderCard">
                         <i class="icon" :class="'el-icon-' + item.icon" :style="{ background: item.color }"></i>
-                        <div>
-                            <p class="important-font">￥{{ item.value }}</p>
+                        <div style="margin: auto; text-align: center;">
+                            <p class="important-font">{{ item.value }}</p>
                             <p class="secondary-font">{{ item.name }}</p>
                         </div>
                     </el-card>
@@ -270,7 +270,6 @@ export default {
     margin: 0 0 30px 30px;
     border: #DCDFE6 1px solid;
     border-radius: 10px;
-
 }
 
 .OrderCard i {

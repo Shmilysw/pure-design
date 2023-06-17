@@ -16,14 +16,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * <p>
- *
- * </p>
- *
- * @author 青哥哥
- * @since 2022-01-26
- */
 @Getter
 @Setter
 @TableName("sys_user")
