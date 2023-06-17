@@ -127,7 +127,7 @@ export default {
                 <el-table-column label="库存数量" prop="material_number"></el-table-column>
                 <el-table-column label="原产商家" prop="material_company"></el-table-column>
                 <el-table-column label="负责人" prop="material_person"></el-table-column>
-                <el-table-column label="下单时间" prop="material_create_time">
+                <el-table-column label="时间" prop="material_create_time">
                     <template slot-scope="scope">
                         {{ scope.row.material_create_time | dateFormat }}
                     </template>
