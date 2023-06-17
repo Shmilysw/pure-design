@@ -42,7 +42,7 @@
                         {{ scope.row.create_time | dateFormat }}
                     </template>
                 </el-table-column>
-                <el-table-column label="操作">
+                <el-table-column label="详情">
                     <template>
                         <!-- <el-button icon="el-icon-edit" size="mini" type="primary" @click="showBox"></el-button> -->
                         <el-button icon="el-icon-location" size="mini" type="success" @click="showProgressBox"></el-button>
@@ -92,6 +92,9 @@
 <script>
 import cityData from '../api/citydata.js'
 import db from '../api/db.js'
+import orderdata from '../api/orderdata'
+
+
 export default {
     data() {
         return {
@@ -138,49 +141,8 @@ export default {
             // this.total = result.data.total
             // this.orderList = result.data.goods
             // 直接模拟数据
-            this.total = 10;
-            this.orderList = [
-                {
-                    order_number: '1371473147198471491',
-                    order_name: '化学原料',
-                    order_price: '1200￥',
-                    pay_status: '1',
-                    is_send: '否',
-                    create_time: '2023-05-30 09:30:00'
-                },
-                {
-                    order_number: '233414141313131313',
-                    order_name: '化学试剂',
-                    order_price: '1500￥',
-                    pay_status: '1',
-                    is_send: '是',
-                    create_time: '2023-04-20 18:30:00'
-                },
-                {
-                    order_number: '321307941414819408',
-                    order_name: '活性药物',
-                    order_price: '2500￥',
-                    pay_status: '0',
-                    is_send: '否',
-                    create_time: '2023-04-22 07:29:00'
-                },
-                {
-                    order_number: '34354141412414144',
-                    order_name: '包装材料',
-                    order_price: '3000￥',
-                    pay_status: '0',
-                    is_send: '否',
-                    create_time: '2023-03-17 15:02:22'
-                },
-                {
-                    order_number: '36848242472492478',
-                    order_name: '溶剂',
-                    order_price: '2700￥',
-                    pay_status: '1',
-                    is_send: '否',
-                    create_time: '2023-01-22 12:20:00'
-                },
-            ]
+            this.orderList = orderdata;
+            this.total = orderdata.length;
         },
         handleSizeChange(newSize) {
             this.queryInfo.pagesize = newSize

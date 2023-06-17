@@ -1,0 +1,122 @@
+export default [
+    {
+        quality_id: '0',
+        quality_name: '屹立塑胶',
+        quality_num: '5520U-1001',
+        quality_photo: require('../assets/img-product/product_photo0.png'),
+        quality_number: '6555/6560',
+        quality_company: '东莞市xxxx有限公司',
+        quality_person: '质检人1',
+        quality_create_time: '2023-05-20 09:30:00',
+        quality_rate: '99.92%',
+        quality_detail: '一种抗子外线耐冲击化学药品'
+    },
+    {
+        quality_id: '1',
+        quality_name: '二溴新戊二醇',
+        quality_num: '3296-90-0',
+        quality_photo: require('../assets/img-product/product_photo1.png'),
+        quality_number: '28220/28280',
+        quality_company: '浙江省xxxx有限公司',
+        quality_person: '质检人2',
+        quality_create_time: '2023-05-21 12:00:00',
+        quality_rate: '99.78%',
+        quality_detail: '一种反应性阻燃剂，使用后能达到更加严密的阻燃效果。'
+    },
+    {
+        quality_id: '2',
+        quality_name: '奥克泰式杀孢子剂',
+        quality_num: '4876-20-10',
+        quality_photo: require('../assets/img-product/product_photo2.png'),
+        quality_number: '996/998',
+        quality_company: '济南xxxx有限公司',
+        quality_person: '质检人3',
+        quality_create_time: '2023-05-22 07:30:00',
+        quality_rate: '99.79%',
+        quality_detail: '进口Oxytech杀孢子剂，过氧化氢浓缩液，细胞房无味杀孢子剂无毒。'
+    },
+    {
+        quality_id: '3',
+        quality_name: '安氧去除剂',
+        quality_num: 'Js-203',
+        quality_photo: require('../assets/img-product/product_photo3.png'),
+        quality_number: '8870/8876',
+        quality_company: '江苏省xxxx有限公司',
+        quality_person: '质检人4',
+        quality_create_time: '2023-05-23 20:30:00',
+        quality_rate: '99.93%',
+        quality_detail: 'JS-203氨氮去除剂主要用于去除废水中的氨氮，投加后使废水中的氨氮部分生成不溶于水的氮气。'
+    },
+    {
+        quality_id: '4',
+        quality_name: '聚丙烯酰胺',
+        quality_num: '6374-19',
+        quality_photo: require('../assets/img-product/product_photo4.png'),
+        quality_number: '463/475',
+        quality_company: '任丘市xxxx有限公司',
+        quality_person: '质检人5',
+        quality_create_time: '2023-05-24 13:30:00',
+        quality_rate: '97.47%',
+        quality_detail: '江海聚丙酰胺，工业污水处理，乳液增稠，化学絮凝药剂。'
+    },
+    {
+        quality_id: '5',
+        quality_name: '氧化铝',
+        quality_num: 'Cls-234',
+        quality_photo: require('../assets/img-product/product_photo5.png'),
+        quality_number: '37/38',
+        quality_company: '河间市xxxx有限公司',
+        quality_person: '质检人6',
+        quality_create_time: '2023-05-25 15:30:00',
+        quality_rate: '97.36%',
+        quality_detail: '泰亨，饮水级氧化铝，水体净化水处理药剂。'
+    },
+    {
+        quality_id: '6',
+        quality_name: 'COD去除剂',
+        quality_num: '28366',
+        quality_photo: require('../assets/img-product/product_photo6.png'),
+        quality_number: '1023/1033',
+        quality_company: '巩义市xxxx有限公司',
+        quality_person: '质检人7',
+        quality_create_time: '2023-05-26 16:30:00',
+        quality_rate: '99.03%',
+        quality_detail: 'cod去除剂是针对电镀、线路板等废水中COD的可生化性低而特别开发的一种新型药剂。'
+    },
+    {
+        quality_id: '7',
+        quality_name: '春雷霉素',
+        quality_num: '2432',
+        quality_photo: require('../assets/img-product/product_photo7.png'),
+        quality_number: '117/118',
+        quality_company: '青州xxxx有限公司',
+        quality_person: '质检人8',
+        quality_create_time: '2023-05-27 12:00:00',
+        quality_rate: '99.15%',
+        quality_detail: '一种有机化合物，用于农作物杀菌。'
+    },
+    {
+        quality_id: '8',
+        quality_name: '硫酸亚铁',
+        quality_num: '63546',
+        quality_photo: require('../assets/img-product/product_photo8.png'),
+        quality_number: '275/275',
+        quality_company: '巩义市xxxx有限公司',
+        quality_person: '质检人9',
+        quality_create_time: '2023-05-28 10:30:00',
+        quality_rate: '100.00%',
+        quality_detail: '一种无机物，可用于色谱分析剂、污水处理。'
+    },
+    {
+        quality_id: '9',
+        quality_name: '硝酸钠',
+        quality_num: '3532',
+        quality_photo: require('../assets/img-product/product_photo9.png'),
+        quality_number: '534/536',
+        quality_company: '巩义市xxxx有限公司',
+        quality_person: '质检人10',
+        quality_create_time: '2023-05-29 08:30:00',
+        quality_rate: '99.62%',
+        quality_detail: '白色晶体，易溶于水，可用于污水处理。'
+    }
+]

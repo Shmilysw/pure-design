@@ -10,31 +10,31 @@ export default {
             tableData: [{
                 date: '2023-05-23',
                 name: '客户7',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-22',
                 name: '客户6',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-14',
                 name: '客户5',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-10',
                 name: '客户4',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-08',
                 name: '客户3',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-06',
                 name: '客户2',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }, {
                 date: '2023-05-01',
                 name: '客户1',
-                address: '上海市生物化工科技有限公司'
+                address: '上海市xxxx科技有限公司'
             }],
             countData: [
                 {

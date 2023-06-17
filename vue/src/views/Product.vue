@@ -1,152 +1,171 @@
 <script lang="js">
-import * as echarts from "echarts";
+
+import productdata from '../api/productdata'
+
 
 export default {
-    name: "Product",
     data() {
         return {
-
+            queryInfo: {
+                query: '',
+                pagenum: 1,
+                pagesize: 15
+            },
+            total: 0,
+            orderList: [],
+            addressVisible: false,
+            addressForm: {
+                address1: [],
+                address2: ''
+            },
+            addressFormRules: {
+                address1: [
+                    { required: true, message: '请选择省市区县', trigger: 'blur' }
+                ],
+                address2: [
+                    { required: true, message: '请输入详细地址', trigger: 'blur' }
+                ]
+            },
+            progressVisible: false,
+            progressInfo: "",
         }
     },
-    mounted() {
-        // 模拟数据
-        // Generate data
-        let category = [];
-        // let dottedBase = + new Date();
-        let lineData = [];
-        let barData = [];
-
-        for (let i = 0; i < 12; i++) {
-            // let date = new Date((dottedBase += 3600 * 24 * 1000));
-            // let month = (i + 1);
-            let b = Math.random() * 200;
-            let d = Math.random() * 200;
-            barData.push(b + 50);
-            lineData.push(d + b);
-        }
-        category.push(
-            [2022, 5].join('-'),
-            [2022, 6].join('-'),
-            [2022, 7].join('-'),
-            [2022, 8].join('-'),
-            [2022, 9].join('-'),
-            [2022, 10].join('-'),
-            [2022, 11].join('-'),
-            [2022, 12].join('-'),
-            [2023, 1].join('-'),
-            [2023, 2].join('-'),
-            [2023, 3].join('-'),
-            [2023, 4].join('-')
-        );
-        // option
-        var option = {
-            backgroundColor: '#fff',
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
-            },
-            legend: {
-                data: ['预期生产', '实际生产'],
-                textStyle: {
-                    color: '#000'
-                }
-            },
-            xAxis: {
-                data: category,
-                axisLine: {
-                    lineStyle: {
-                        color: '#000'
-                    }
-                }
-            },
-            yAxis: {
-                splitLine: { show: false },
-                axisLine: {
-                    lineStyle: {
-                        color: '#000'
-                    }
-                }
-            },
-            series: [
-                {
-                    name: '预期生产',
-                    type: 'line',
-                    smooth: true,
-                    showAllSymbol: true,
-                    symbol: 'emptyCircle',
-                    symbolSize: 15,
-                    data: lineData
-                },
-                {
-                    name: '实际生产',
-                    type: 'bar',
-                    barWidth: 10,
-                    itemStyle: {
-                        borderRadius: 5,
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                            { offset: 0, color: '#14c8d4' },
-                            { offset: 1, color: '#43eec6' }
-                        ])
-                    },
-                    data: barData
-                },
-            ]
-        };
-
-        var chartDom = document.getElementById('main');
-        var myChart = echarts.init(chartDom);
-
-        this.request.get("/echarts/members").then(res => {
-            // 填空
-            option.series.data = res.data
-            myChart.setOption(option);
-        })
+    created() {
+        this.getOrderList()
+    },
+    methods: {
+        getOrderList() {
+            // 获取接入数据
+            // const { data: result } = await this.$http.get('orders', {
+            //     params: this.queryInfo
+            // })
+            // console.log(params);
+            // if (result.meta.status !== 200) {
+            //     return this.$message.error('获取订单列表失败')
+            // }
+            // console.log(result)
+            // this.total = result.data.total
+            // this.orderList = result.data.goods
+            // 直接模拟数据
+            // this.total = 10;
+            this.orderList = productdata;
+            this.total = productdata.length;
+            // console.log(productdata.length);
+            // this.orderList = [
+            //     {
+            //         product_id: '0',
+            //         product_name: '化工配件',
+            //         product_num: '341414131',
+            //         product_photo: require('../assets/my_head.png'),
+            //         product_number: '224342',
+            //         product_company: 'space-x',
+            //         product_person: '马斯克',
+            //         product_create_time: '2023-05-30 09:30:00',
+            //         product_status: '0',
+            //         product_detail: '化工设备。指主要作用部件是静止的或者只有很少运动的机械，如各种容器（槽、罐、釜等）、普通窑、塔器、反应器、换热器、普通干燥器、蒸发器，反应炉、电解槽、结晶设备、传质设备、吸附设备、流态化设备、普通分离设备以及离子交换设备等。化工机械的划分是不严格的，一些流体输送机械（如泵、风机和压缩机等）在化工部门常被称作化工机械，但同时它们又是各种工业生产中的通用机械。近代化工机械的设计和制造，除了依赖于机械工程和材料工程的发展外，还与化学工艺和化学工程的发展紧密相关。化工机械主要研究机械的耐腐蚀等，还有电化学等范围。'
+            //     }
+            // ]
+        },
+        handleSizeChange(newSize) {
+            this.queryInfo.pagesize = newSize
+            this.getOrderList()
+        },
+        handleCurrentChange(newPage) {
+            this.queryInfo.pagenum = newPage
+            this.getOrderList()
+        },
+        // 展示修改地址的对话框
+        showBox() {
+            this.addressVisible = true
+        },
+        addressDialogClosed() {
+            this.$refs.addressFormRef.resetFields()
+        },
+        showProgressBox(orderList, product_id) {
+            // const { data: result } = await this.$http.get('http://localhost:3000')
+            // if (result.meta.status !== 200) {
+            //   return this.$message.error('获取物流进度失败')
+            // }
+            this.progressVisible = true
+            this.progressInfo = orderList[product_id].product_detail
+        },
     }
 }
 </script>
 
 <template>
     <div>
-        <el-row :gutter="10" style="margin-bottom: 30px">
-            <el-col :span="6">
-                <el-card style="color: #409EFF">
-                    <div><i class="el-icon-user-solid" /> 工人总数</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
-                        758
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card style="color: #F56C6C">
-                    <div><i class="el-icon-money" /> 销售总量</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
-                        ￥ 25223545
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card style="color: #67C23A">
-                    <div><i class="el-icon-bank-card" /> 收益总额</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
-                        ￥ 4304324
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="6">
-                <el-card style="color: #000">
-                    <div><i class="el-icon-s-shop" /> 工厂总数</div>
-                    <div style="padding: 10px 0; text-align: center; font-weight: bold; font-size: 20px;">
-                        27
-                    </div>
-                </el-card>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="12">
-                <div id="main" style="width:1200px; height:480px"></div>
-            </el-col>
-        </el-row>
+        <!-- 面包屑导航区域 -->
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+            <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>产品管理</el-breadcrumb-item>
+        </el-breadcrumb>
+        <div style="margin: 10px 0">
+            <el-input style="width: 200px" placeholder="请输入名称" suffix-icon="el-icon-search"></el-input>
+            <el-button class="ml-5" type="primary">搜索</el-button>
+            <el-button type="warning">重置</el-button>
+        </div>
+        <!-- 卡片视图区域 -->
+        <el-card>
+            <el-table :data="orderList" border stripe>
+                <el-table-column label="ID" type="index"></el-table-column>
+                <el-table-column label="产品名称" prop="product_name"></el-table-column>
+                <el-table-column label="产品序列号" prop="product_num"></el-table-column>
+                <el-table-column label="产品图片" prop="product_photo">
+                    <template slot-scope="scope">
+                        <el-popover placement="top-start" title="" trigger="hover">
+                            <img :src="scope.row.product_photo" alt="" style="width: 150px;height: 150px">
+                            <img slot="reference" :src="scope.row.product_photo" style="width: 30px;height: 30px">
+                        </el-popover>
+                    </template>
+                </el-table-column>
+                <el-table-column label="产品数量" prop="product_number"></el-table-column>
+                <el-table-column label="生产商家" prop="product_company"></el-table-column>
+                <el-table-column label="负责人" prop="product_person"></el-table-column>
+                <el-table-column label="生产时间" prop="product_create_time" min-width="90%">
+                    <template slot-scope="scope">
+                        {{ scope.row.product_create_time | dateFormat }}
+                    </template>
+                </el-table-column>
+                <el-table-column label="产品状态" prop="product_status">
+                    <template slot-scope="scope">
+                        <el-tag type="success" v-if="scope.row.product_status === '0'">有货</el-tag>
+                        <el-tag type="danger" v-else>补货</el-tag>
+                    </template>
+                </el-table-column>
+                <el-table-column label="详细信息">
+                    <template slot-scope="scope">
+                        <!-- <el-button icon="el-icon-edit" size="mini" type="primary" @click="showBox"></el-button> -->
+                        <el-button icon="el-icon-location" size="mini" type="success"
+                            @click="showProgressBox(orderList, scope.row.product_id)"></el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <!-- 分页区域 -->
+            <div style="padding: 10px 0;display: flex;justify-content: center;">
+                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                    :current-page="queryInfo.pagenum" :page-sizes="[5, 10, 15, 20]" :page-size="queryInfo.pagesize"
+                    layout="total, sizes, prev, pager, next, jumper" :total="total" background>
+                </el-pagination>
+            </div>
+        </el-card>
+        <!-- 修改修改地址的对话框 -->
+        <!-- 内容主体区域 -->
+        <!-- 底部区域 -->
+        <!-- <el-dialog title="修改信息" :visible.sync="addressVisible" width="30%" @close="addressDialogClosed">
+            
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="addressVisible = false">取 消</el-button>
+                <el-button type="primary" @click="addressVisible = false">确 定</el-button>
+            </span>
+        </el-dialog> -->
+        <el-dialog title="详细信息" :visible.sync="progressVisible" width="30%">
+            <!-- 详情信息 -->
+            <el-card>
+                {{ progressInfo }}
+            </el-card>
+        </el-dialog>
     </div>
 </template>
+
+<style></style>
