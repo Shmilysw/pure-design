@@ -32,7 +32,7 @@
                     <template slot-scope="scope">
                         <!-- 显示角色选择 -->
                         <el-tag type="primary" v-if="scope.row.role === 'ROLE_ADMIN'">管理员</el-tag>
-                        <el-tag type="warning" v-if="scope.row.role === 'ROLE_TEACHER'">老师</el-tag>
+                        <el-tag type="warning" v-if="scope.row.role === 'ROLE_TEACHER'">数据库</el-tag>
                         <el-tag type="success" v-if="scope.row.role === 'ROLE_STUDENT'">学生</el-tag>
                         <el-tag type="warning" v-if="scope.row.role === 'ROLE_BOSS'">老板</el-tag>
                         <el-tag type="success" v-if="scope.row.role === 'ROLE_USER'">用户</el-tag>
