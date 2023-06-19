@@ -3,7 +3,7 @@
         text-color="#fff" active-text-color="#ffd04b" :collapse-transition="false" :collapse="isCollapse" router>
         <div style="height: 60px; line-height: 60px;">
             <img src="../assets/icon.jpg" alt="" style="width: 30px; height: 30px; position: relative; top: 10px;">
-            <b style="color: white;" v-show="logoTextShow">智能化工制药管理系统</b>
+            <b style="color: white; font-size: 15px;" v-show="logoTextShow">制药产业数智化管理平台</b>
         </div>
         <div v-for="item in menus" :key="item.id">
             <div v-if="item.path">

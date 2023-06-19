@@ -9,9 +9,6 @@ import org.apache.ibatis.annotations.Param;
  * <p>
  *  Mapper 接口
  * </p>
- *
- * @author 青哥哥
- * @since 2022-03-03
  */
 public interface CourseMapper extends BaseMapper<Course> {
 

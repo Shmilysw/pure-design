@@ -31,9 +31,6 @@ import java.util.List;
  * <p>
  *  服务实现类
  * </p>
- *
- * @author 青哥哥
- * @since 2022-01-26
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {

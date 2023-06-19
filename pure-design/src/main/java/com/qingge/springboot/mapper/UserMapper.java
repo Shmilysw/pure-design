@@ -11,9 +11,6 @@ import org.apache.ibatis.annotations.Update;
  * <p>
  *  Mapper 接口
  * </p>
- *
- * @author 青哥哥
- * @since 2022-01-26
  */
 public interface UserMapper extends BaseMapper<User> {
 

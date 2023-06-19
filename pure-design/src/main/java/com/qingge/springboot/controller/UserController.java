@@ -31,9 +31,6 @@ import java.util.List;
  * <p>
  *  前端控制器
  * </p>
- *
- * @author 青哥哥
- * @since 2022-01-26
  */
 @RestController
 @RequestMapping("/user")
