@@ -2,14 +2,10 @@ package com.qingge.springboot.controller;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.qingge.springboot.entity.User;
 import com.qingge.springboot.service.IUserService;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qingge.springboot.common.Result;
 
 import com.qingge.springboot.service.ICourseService;

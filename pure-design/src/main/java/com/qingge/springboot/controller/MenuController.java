@@ -5,19 +5,13 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.qingge.springboot.common.Constants;
 import com.qingge.springboot.entity.Dict;
 import com.qingge.springboot.mapper.DictMapper;
-import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qingge.springboot.common.Result;
-
 import com.qingge.springboot.service.IMenuService;
 import com.qingge.springboot.entity.Menu;
-
 import org.springframework.web.bind.annotation.RestController;
 
 /**

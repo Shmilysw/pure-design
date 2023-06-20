@@ -19,8 +19,6 @@ import com.qingge.springboot.service.IMenuService;
 import com.qingge.springboot.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.qingge.springboot.utils.TokenUtils;
-import org.apache.xmlbeans.impl.xb.ltgfmt.Code;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
